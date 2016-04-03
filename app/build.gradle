@@ -1,0 +1,40 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile rootProject.ext.dependencies["appcompat-v7"]
+    //cool Log
+    compile rootProject.ext.dependencies["logger"]
+    //ButterKnife
+    compile rootProject.ext.dependencies["butterknife"]
+    //组件通知
+    compile rootProject.ext.dependencies["eventbus"]
+    //MD 对话框
+    compile(rootProject.ext.dependencies["material-dialogs-core"]) {
+        transitive = true
+    }
+    compile(rootProject.ext.dependencies["material-dialogs-common"]) {
+        transitive = true
+    }
+}
