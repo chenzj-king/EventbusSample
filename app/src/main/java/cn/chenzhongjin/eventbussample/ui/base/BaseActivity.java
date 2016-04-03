@@ -29,14 +29,9 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.MaterialDialog;
-
 import org.greenrobot.eventbus.EventBus;
 
 import java.lang.ref.WeakReference;
-
-import cn.chenzhongjin.eventbussample.R;
-import cn.chenzhongjin.eventbussample.util.MdDialogFactory;
 
 /**
  * @文件名: BaseActivity
@@ -75,8 +70,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected MyHandler mHandler;
-
-    protected MaterialDialog mMaterialDialog;
 
     @Override
     protected void onStart() {
@@ -272,42 +265,6 @@ public abstract class BaseActivity extends AppCompatActivity {
                 mToast.show();
             }
         });
-    }
-
-    public boolean isShowIngDialog() {
-        boolean isShowing = false;
-        if (null != mMaterialDialog && mMaterialDialog.isShowing()) {
-            isShowing = true;
-        }
-        return isShowing;
-    }
-
-    public void hideDialog() {
-        if (null != mMaterialDialog && mMaterialDialog.isShowing()) {
-            mMaterialDialog.dismiss();
-        }
-    }
-
-    public void showOnlyContent(String content) {
-        mMaterialDialog = MdDialogFactory.showOnlyContent(this, content);
-        mMaterialDialog.show();
-    }
-
-    public void showLoadingDialog(String title, String content) {
-        mMaterialDialog = MdDialogFactory.showLoading(this, title, content);
-        mMaterialDialog.show();
-    }
-
-    public void showNoTitleLoadingDialog(String content) {
-        mMaterialDialog = MdDialogFactory.showNoTitleLoading(this, content);
-        mMaterialDialog.show();
-    }
-
-
-    public void showNoTitleMdDialog(String content, MaterialDialog.SingleButtonCallback singleButtonCallback) {
-        mMaterialDialog = MdDialogFactory.showNoTitleCallbacks(this, content, getString(R.string.confirm), getString(R.string
-                .cancel), singleButtonCallback);
-        mMaterialDialog.show();
     }
 
     /**

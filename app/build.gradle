@@ -24,17 +24,8 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile rootProject.ext.dependencies["appcompat-v7"]
-    //cool Log
-    compile rootProject.ext.dependencies["logger"]
     //ButterKnife
     compile rootProject.ext.dependencies["butterknife"]
     //组件通知
     compile rootProject.ext.dependencies["eventbus"]
-    //MD 对话框
-    compile(rootProject.ext.dependencies["material-dialogs-core"]) {
-        transitive = true
-    }
-    compile(rootProject.ext.dependencies["material-dialogs-common"]) {
-        transitive = true
-    }
 }
