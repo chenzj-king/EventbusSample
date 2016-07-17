@@ -17,7 +17,7 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         />
 
-    <cn.chenzhongjin.eventbussample.widgets.CustomViewPager
+    <cn.chenzhongjin.eventbus.sample.widgets.CustomViewPager
         android:id="@+id/custom_viewpager"
         android:layout_width="match_parent"
         android:layout_height="0dp"

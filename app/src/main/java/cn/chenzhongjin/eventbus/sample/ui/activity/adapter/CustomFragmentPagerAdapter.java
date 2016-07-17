@@ -13,7 +13,7 @@
  *   limitations under the License.
  */
 
-package cn.chenzhongjin.eventbussample.ui.activity.adapter;
+package cn.chenzhongjin.eventbus.sample.ui.activity.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

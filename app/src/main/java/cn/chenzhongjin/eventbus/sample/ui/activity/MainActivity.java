@@ -13,7 +13,7 @@
  *   limitations under the License.
  */
 
-package cn.chenzhongjin.eventbussample.ui.activity;
+package cn.chenzhongjin.eventbus.sample.ui.activity;
 
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
@@ -24,26 +24,26 @@ import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import cn.chenzhongjin.eventbussample.R;
-import cn.chenzhongjin.eventbussample.eventbus.TestMesData;
-import cn.chenzhongjin.eventbussample.ui.activity.adapter.CustomFragmentPagerAdapter;
-import cn.chenzhongjin.eventbussample.ui.base.BaseActivity;
-import cn.chenzhongjin.eventbussample.ui.fragment.Fragment1;
-import cn.chenzhongjin.eventbussample.ui.fragment.Fragment2;
-import cn.chenzhongjin.eventbussample.widgets.CustomViewPager;
+import cn.chenzhongjin.eventbus.sample.R;
+import cn.chenzhongjin.eventbus.sample.eventbus.TestMesData;
+import cn.chenzhongjin.eventbus.sample.ui.activity.adapter.CustomFragmentPagerAdapter;
+import cn.chenzhongjin.eventbus.sample.ui.base.BaseActivity;
+import cn.chenzhongjin.eventbus.sample.ui.fragment.Fragment1;
+import cn.chenzhongjin.eventbus.sample.ui.fragment.Fragment2;
+import cn.chenzhongjin.eventbus.sample.widgets.CustomViewPager;
 
 public class MainActivity extends BaseActivity {
 
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar mToolbar;
-    @Bind(R.id.custom_viewpager)
+    @BindView(R.id.custom_viewpager)
     CustomViewPager mCustomViewpager;
-    @Bind(R.id.tab1)
+    @BindView(R.id.tab1)
     LinearLayout mTab1Button;
-    @Bind(R.id.tab2)
+    @BindView(R.id.tab2)
     LinearLayout mTab2Button;
 
     private ArrayList<Fragment> mFragmentList;

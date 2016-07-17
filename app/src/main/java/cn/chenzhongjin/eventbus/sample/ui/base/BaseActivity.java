@@ -13,7 +13,7 @@
  *   limitations under the License.
  */
 
-package cn.chenzhongjin.eventbussample.ui.base;
+package cn.chenzhongjin.eventbus.sample.ui.base;
 
 import android.app.Activity;
 import android.content.Intent;

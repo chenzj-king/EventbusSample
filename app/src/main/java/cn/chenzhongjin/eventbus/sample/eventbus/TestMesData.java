@@ -13,7 +13,7 @@
  *   limitations under the License.
  */
 
-package cn.chenzhongjin.eventbussample.eventbus;
+package cn.chenzhongjin.eventbus.sample.eventbus;
 
 /**
  * @文件名: EventTestMesData

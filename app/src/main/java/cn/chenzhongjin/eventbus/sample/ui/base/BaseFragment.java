@@ -13,7 +13,7 @@
  *   limitations under the License.
  */
 
-package cn.chenzhongjin.eventbussample.ui.base;
+package cn.chenzhongjin.eventbus.sample.ui.base;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -23,6 +23,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.greenrobot.eventbus.EventBus;
+
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * @文件名: BaseFragment
@@ -35,6 +38,7 @@ public abstract class BaseFragment extends Fragment {
 
     protected View view;
     protected BaseActivity context;
+    private Unbinder mUnbinder;
 
     protected boolean isRegisterEvent() {
         return true;
@@ -43,6 +47,7 @@ public abstract class BaseFragment extends Fragment {
     protected abstract int getLayoutId();
 
     protected void initSpecialView(View view) {
+        mUnbinder = ButterKnife.bind(this, view);
     }
 
     protected abstract void initViews(View view);
@@ -76,6 +81,14 @@ public abstract class BaseFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         initSpecialView(view);
         initViews(view);
+    }
+
+    @Override
+    public void onDestroyView() {
+        if (null != mUnbinder) {
+            mUnbinder.unbind();
+        }
+        super.onDestroyView();
     }
 
     @Override

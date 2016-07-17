@@ -13,7 +13,7 @@
  *   limitations under the License.
  */
 
-package cn.chenzhongjin.eventbussample.ui.fragment;
+package cn.chenzhongjin.eventbus.sample.ui.fragment;
 
 import android.view.View;
 import android.widget.TextView;
@@ -21,11 +21,10 @@ import android.widget.TextView;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-import cn.chenzhongjin.eventbussample.R;
-import cn.chenzhongjin.eventbussample.eventbus.TestMesData;
-import cn.chenzhongjin.eventbussample.ui.base.BaseFragment;
+import butterknife.BindView;
+import cn.chenzhongjin.eventbus.sample.R;
+import cn.chenzhongjin.eventbus.sample.eventbus.TestMesData;
+import cn.chenzhongjin.eventbus.sample.ui.base.BaseFragment;
 
 /**
  * @文件名: Fragment1
@@ -34,9 +33,9 @@ import cn.chenzhongjin.eventbussample.ui.base.BaseFragment;
  * @email: chenzj@sq580.com
  * @修改记录:
  */
-public class Fragment2 extends BaseFragment {
+public class Fragment1 extends BaseFragment {
 
-    @Bind(R.id.fragment_test_text)
+    @BindView(R.id.fragment_test_text)
     TextView fragmentTestText;
 
     @Override
@@ -46,19 +45,13 @@ public class Fragment2 extends BaseFragment {
 
     @Override
     protected void initViews(View view) {
-        ButterKnife.bind(this, view);
-        fragmentTestText.setText("Fra2");
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
+        fragmentTestText.setText("Fra1");
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void handleTestMess(TestMesData testMesData) {
-        fragmentTestText.setText(String.format("fra2:%s", testMesData.getContent()));
+        fragmentTestText.setText(String.format("fra1:%s", testMesData.getContent()));
     }
 }
+
 

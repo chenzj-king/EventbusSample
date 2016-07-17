@@ -1,0 +1,46 @@
+ext.versions = [
+        code       : 1,
+        name       : '1.0.0',
+
+        minSdk     : 15,
+        targetSdk  : 23,
+        compileSdk : 23,
+        buildTools : '23.0.3',
+
+        // Library versions
+        junit      : '4.12',
+        supportLibs: '23.4.0',
+        multidex   : '1.0.1',
+]
+ext.libraries = [
+        junit              : "junit:junit:$versions.junit",
+        supportV4          : "com.android.support:support-v4:$versions.supportLibs",
+        supportAppCompat   : "com.android.support:appcompat-v7:$versions.supportLibs",
+        supportDesign      : "com.android.support:design:$versions.supportLibs",
+        supportRecyclerView: "com.android.support:recyclerview-v7:$versions.supportLibs",
+        supportCardView    : "com.android.support:cardview-v7:$versions.supportLibs",
+        supportAnnotations : "com.android.support:support-annotations:$versions.supportLibs",
+
+        //拆dex
+        multidex           : "com.android.support:multidex:1.0.1",
+
+        //黄油刀.依赖注入view
+        apt                : "com.neenbedankt.gradle.plugins:android-apt:1.8",
+        butterknife        : "com.jakewharton:butterknife:8.1.0",
+        butterknifeApt     : "com.jakewharton:butterknife-compiler:8.1.0",
+
+        //cool log
+        logger             : "com.github.orhanobut:logger:1.12",
+
+        //网络请求&gson.squareup系列
+        okhttp             : "com.squareup.okhttp3:okhttp:3.3.1",
+        okhttpUrlconnection: "com.squareup.okhttp3:okhttp-urlconnection:3.3.1",
+        okhttpWs           : "com.squareup.okhttp3:okhttp-ws:3.3.1",
+
+        okio               : "com.squareup.okio:okio:1.9.0",
+        gson               : "com.google.code.gson:gson:2.7",
+
+        //事件总线&数据库框架.greenrobot系列
+        eventbus           : "org.greenrobot:eventbus:3.0.0",
+]
+
